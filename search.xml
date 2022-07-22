@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Hello world</title>
+    <url>/2022/07/10/Hello-world/</url>
+    <content><![CDATA[<h3 id="This-is-the-first-page"><a href="#This-is-the-first-page" class="headerlink" title="This is the first page"></a>This is the first page</h3><hr>
+<ul>
+<li>Hello World<table>
+<thead>
+<tr>
+<th>tableTest</th>
+<th>col1</th>
+<th>col2</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>row1</td>
+<td>Hello</td>
+<td>world</td>
+</tr>
+<tr>
+<td>row2</td>
+<td>Hi</td>
+<td>Stranger</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>helloworld</category>
+      </categories>
+      <tags>
+        <tag>init, helloworld</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>test.md</title>
+    <url>/2022/07/21/test/</url>
+    <content><![CDATA[<h2 id="这是测试的页面"><a href="#这是测试的页面" class="headerlink" title="这是测试的页面"></a>这是测试的页面</h2><p>Hello world.</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>Markdown笔记</title>
+    <url>/2022/07/20/MarkdownNote/</url>
+    <content><![CDATA[<h1 id="Markdown-格式"><a href="#Markdown-格式" class="headerlink" title="Markdown 格式"></a>Markdown 格式</h1><hr>
+<p>[TOC]</p>
+<hr>
+<h2 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h2><ul>
+<li>可以使用#来声明标题，markdown最多支持六级标题定义   </li>
+<li>底线标题（&#x3D;、-），至少要两个以上，&#x3D;代表的是一级标题，-代表的是二级标题   <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!-- 推荐 --&gt;</span><br><span class="line">#   一级标题</span><br><span class="line">##   二级标题</span><br><span class="line">### 三级标题</span><br><span class="line"></span><br><span class="line">&lt;!-- 不推荐 --&gt;</span><br><span class="line">一级标题</span><br><span class="line">======</span><br><span class="line">二级标题</span><br><span class="line">-------</span><br></pre></td></tr></table></figure></li>
+</ul>
+<hr>
+<h2 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h2><ul>
+<li>字体加粗<br><strong>加粗字体</strong>  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">**加粗字体**</span><br></pre></td></tr></table></figure></li>
+<li>字体倾斜<br><em>倾斜字体</em><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">*倾斜字体*</span><br></pre></td></tr></table></figure></li>
+<li>字体倾斜加粗<br><em><strong>倾斜字体加粗</strong></em><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">***倾斜字体加粗***</span><br></pre></td></tr></table></figure></li>
+<li>删除线<br><del>加删除线字体</del><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">~~加删除线字体~~</span><br></pre></td></tr></table></figure></li>
+</ul>
+<hr>
+<h2 id="段落与换行"><a href="#段落与换行" class="headerlink" title="段落与换行"></a>段落与换行</h2><ul>
+<li>段落由一行或多行文本组成，不同的段落之间使用空行来标记，同层级的段落或行需要加空行来声明,   或者在段落或行之后加三个空格，<ol>
+<li>如果行与行之间没有空行，则会被视为同一段落。</li>
+<li>如果行与行之间有空行，则会被视为不同的段落。</li>
+<li>空行是指行内什么都没有，或者只有空格和制表符。</li>
+<li>如果想在段内换行，则需要在上一行的结尾插入两个以上的空格然后按回车键。</li>
+</ol>
+</li>
+<li>使用规范：为了便于阅读，应该限制每行字符的数量，通常每行不超过80个字符，可以在编辑器中进行设置。</li>
+<li>关于换行<ol>
+<li>当超过80个字符后进行换行。</li>
+<li>在一句话结束（。或!或?）之后换行。</li>
+<li>当URL较长时换行。通常URL较长会导致行字符数量超过限制，为了提高可读性，可以在URL之前加一个换行符。</li>
+</ol>
+</li>
+</ul>
+<hr>
+<h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><pre><code>&gt;   在引用的文字前面加
+&gt;&gt;   引用嵌套
+&gt;&gt;&gt;&gt;   多层引用嵌套
+</code></pre>
+<hr>
+<h2 id="分割符"><a href="#分割符" class="headerlink" title="分割符"></a>分割符</h2><ul>
+<li>—  分割符（三个以上）</li>
+<li>*** 或者 +++（三个以上）</li>
+</ul>
+<hr>
+<h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><ul>
+<li>图片示例<br><img data-src="/images/avatar.png" alt="myBlogPicture"></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">![图片alt](图片链接地址)</span><br><span class="line">&lt;!-- 本地图片：相对路径 --&gt;</span><br><span class="line">![test picture](./images/test.jpg)</span><br><span class="line">&lt;!-- 本地图片：绝对路径 --&gt;</span><br><span class="line">![test picture](/markdown/images/test.jpg)</span><br><span class="line">&lt;!-- 网络图片 --&gt;</span><br><span class="line">![test picture](https://www.test.com/test.jpg)</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="超链接"><a href="#超链接" class="headerlink" title="超链接"></a>超链接</h2><ul>
+<li>下面是github的网址<br><a href="https://www.github.com/">Github</a><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[链接名](链接地址)</span><br></pre></td></tr></table></figure></li>
+<li>引用链接<ul>
+<li>把链接地址在某个地方统一定义好，然后在正文中通过“变量 ”来引用，可读性一下子就变强了，这种方法叫作引用链接。</li>
+<li>引用链接是把链接地址作为“变量 ”先在Markdown文件的页尾定义好，然后在正文中进行引用。</li>
+<li>链接标记可以有字母、数字、空格和标点符号。</li>
+<li>链接标记不区分大小写。</li>
+<li>定义的链接内容可以放在当前文件的任意位置，建议放在页尾。</li>
+<li>当链接地址为网络地址时要以 http&#x2F;https开头，否则会被识别为本地地址。<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">##	文字链接示例</span><br><span class="line">-   在日常中经常使用的网址：[Google](https://www.google.com)、[Github](https://www.github.com)</span><br><span class="line">和[Stack Overflow](https://www.stackoverflow.com)	</span><br><span class="line"></span><br><span class="line">##	测试引用链接</span><br><span class="line">-   在日常中经常使用的网址：[Google]、[Github]和[Stack Overflow]	</span><br><span class="line"></span><br><span class="line">[Google]: https://www.google.com</span><br><span class="line">[Github]: https://www.github.com</span><br><span class="line">[Stack Overflow]: https://www.stackoverflow.com</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li>网址链接<ul>
+<li>在Markdown中，将网络地址或邮箱地址使用&lt;&gt;包裹起来会被自动转换为超链接。<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;http://www.test.com&gt;</span><br><span class="line">&lt;example@email.com&gt;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li>使用规范<ul>
+<li>在Markdown中，链接标题的信息应该更丰富，从标题中应该可以知道链接的内容，要使用有意义的链接标题。</li>
+<li>建议使用&lt;&gt;包裹自动链接，这种方式更通用。</li>
+<li>自动链接要以http&#x2F;https开头。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><ul>
+<li>无序列表<br>无序列表均可用字符 +-*  来创建（序号与内容之间添加三个空格~）</li>
+<li>有序列表<ol>
+<li>数字加小数点（序号与内容之间添加三个空格）</li>
+</ol>
+</li>
+<li>列表嵌套<ul>
+<li>二级列表 （+-*）</li>
+</ul>
+<ol>
+<li>下级列表前面需添加三个空格</li>
+</ol>
+</li>
+<li>使用规范<ul>
+<li>建议使用 - 来标记无序列表，因为 *  容易跟粗体和斜体混淆，而 + 不流行。</li>
+<li>如果一个列表中所有的列表项都没有换行，建议使用1个空格。</li>
+<li>如果列表项有换行，则建议给无序列表使用3个空格，给有序列表使用2个空格。</li>
+<li>如果一个列表中的每个列表项都只有1行，建议列表项之间不要有空行。</li>
+<li>数字、字符、符号列表使用英文半角句号，句号后加空格。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h2><ul>
+<li>设置表格对齐，在第二行的表格标识中设置</li>
+<li>块级元素（代码区块、引用区块）不能插入表格中。  </li>
+<li>使用规范<ol>
+<li>在表格的前、后各空1行。</li>
+<li>在每一行最前和最后都使用|，每一行中的|要尽量都对齐。</li>
+<li>不要使用庞大复杂的表格，那样会难以维护和阅读。<table>
+<thead>
+<tr>
+<th>表头</th>
+<th align="center">表头</th>
+<th align="right">表头</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>默认靠左居中</td>
+<td align="center">设置中间居中</td>
+<td align="right">设置靠右居中</td>
+</tr>
+</tbody></table>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">|表头|表头|表头|</span><br><span class="line">|--------------|:----------------:|-----------:|</span><br><span class="line">|默认靠左居中|设置中间剧中|设置靠右居中|</span><br></pre></td></tr></table></figure></li>
+</ol>
+</li>
+</ul>
+<hr>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><ul>
+<li>单行代码 <code>console.log(&#39;test&#39;);  //单行代码</code></li>
+<li>多行代码   <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//  多行代码</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">test</span>(<span class="params"></span>) &#123;</span><br><span class="line">  		<span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>很多Shell命令都要粘贴到终端中去执行，因此最好避免在Shell命令中使用任何换行操作；可以在行尾使用一个\，这样既能避免命令换行，又能提高源码的可读性。</li>
+<li>建议不要在没有输出内容的Shell命令前加$。在命令没有输出内容的情况下，$是没有必要的，因为内容全是命令，我们不会把命令和输出的内容混淆。</li>
+<li>建议在有输出内容的Shell命令前加上$，这样会比较容易区分命令和输出的内容。</li>
+</ul>
+<hr>
+<h2 id="流程图"><a href="#流程图" class="headerlink" title="流程图"></a>流程图</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">st=&gt;start: 开始</span><br><span class="line">op=&gt;operation: My Operation</span><br><span class="line">cond=&gt;condition: Yes or No?</span><br><span class="line">e=&gt;end</span><br><span class="line">st-&gt;op-&gt;cond</span><br><span class="line">cond(yes)-&gt;e</span><br><span class="line">cond(no)-&gt;op</span><br></pre></td></tr></table></figure>
+
+<h2 id="字符转义"><a href="#字符转义" class="headerlink" title="字符转义"></a>字符转义</h2><ul>
+<li>要在md文件中使用特殊符号，需要使用字符转义，就是在特殊字符前加上一个 \<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">\   反斜杠</span><br><span class="line">`   反引号</span><br><span class="line">*   星号</span><br><span class="line">_   底线</span><br><span class="line">&#123;&#125;   花括号</span><br><span class="line">[]   方括号</span><br><span class="line">()   括号</span><br><span class="line">#   井号</span><br><span class="line">+   加号</span><br><span class="line">-   减号</span><br><span class="line">.   英文句点</span><br><span class="line">!   英文感叹号</span><br></pre></td></tr></table></figure></li>
+</ul>
+<hr>
+<h2 id="扩展语法GFM-Github-Flavored-Markdown"><a href="#扩展语法GFM-Github-Flavored-Markdown" class="headerlink" title="扩展语法GFM(Github Flavored Markdown)"></a>扩展语法GFM(Github Flavored Markdown)</h2><ul>
+<li>删除线 <code>~~这里是有删除线的文本~~</code></li>
+<li>表情符号（emoji），示例如下。更多表情符号请参考<a href="http://www.webpagefx.com/tools/emoji-cheat-sheet/">webpagefx网站</a><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">:表情代码:</span><br><span class="line">:smile:</span><br><span class="line">:laughing:</span><br><span class="line">:+1:</span><br><span class="line">:-1:</span><br><span class="line">:clap:</span><br></pre></td></tr></table></figure></li>
+<li>表格</li>
+<li>任务列表<ol>
+<li>任务列表以-+空格开头，由 [+空格&#x2F;x+] 组成。  </li>
+<li>x可以小写，也可以大写，有些编辑器可能不支持大写，所以为避免解析错误，推荐使用小写的x。</li>
+<li>当方括号中的字符为空格时，复选框是未选中状态，为x时是选中状态。</li>
+</ol>
+</li>
+<li>围栏代码块</li>
+<li>目录<ul>
+<li>在Typora中，可以自动获取文章的标题来生成目录，当标题修改时，目录会随之自动更新，使用起来非常方便<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[TOC]</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li>锚点<ul>
+<li>锚点，也称为书签，用来标记文档的特定位置，使用锚点可以跳转到当前文档或其他文档中指定的标记位置 <code>[锚点描述](#锚点名)</code></li>
+<li>推荐写法<ol>
+<li>锚点名建议使用字母和数字，当然中文也是被支持的，但不排除有些网站支持得不够好。</li>
+<li>锚点名是区分英文大小写的。</li>
+<li>在锚点名中不能含有空格，也不能含有特殊字符。<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">目录</span><br><span class="line">*   [第01章](#第01章)</span><br><span class="line">*   [第02章](#第02章)</span><br><span class="line"></span><br><span class="line">##	第01章</span><br><span class="line">makabakami</span><br><span class="line"></span><br><span class="line">##	第02章</span><br><span class="line">晚安，makabaka</span><br></pre></td></tr></table></figure></li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>markdown, md</tag>
+      </tags>
+  </entry>
+</search>
