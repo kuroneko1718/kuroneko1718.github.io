@@ -207,4 +207,97 @@
         <tag>markdown, md</tag>
       </tags>
   </entry>
+  <entry>
+    <title>ubuntu</title>
+    <url>/2022/08/04/ubuntu/</url>
+    <content><![CDATA[<h2 id="Ubuntu"><a href="#Ubuntu" class="headerlink" title="Ubuntu"></a>Ubuntu</h2><hr>
+<h3 id="虚拟机问题"><a href="#虚拟机问题" class="headerlink" title="虚拟机问题"></a>虚拟机问题</h3><ul>
+<li>虚拟机下载<ul>
+<li><a href="http://www.virtualbox.org/wiki/Downloads">www.virtualbox.org/wiki/Downloads</a></li>
+</ul>
+</li>
+<li>系统镜像CD安装<ul>
+<li>虚拟机屏幕显示问题。<ol>
+<li>因为虚拟机分辨率问题，安装界面出现显示不全问题，导致安装界面下方的按钮无法显示，可以使用Alt+F7拉动界面，并用鼠标右键固定</li>
+<li>因为虚拟机的显示分辨率的问题，可以使用按键Ctrl+Alt+T进入终端，并输入xrandr -s 1280x800 修改屏幕分辨率。</li>
+</ol>
+</li>
+<li>虚拟机硬盘分区问题</li>
+</ul>
+</li>
+<li>虚拟机网络问题<ul>
+<li>虚拟机安装成功之后网络连接失败<ol>
+<li>vmware network adapter vmnet8 没有有效的IP配置，因为设置时为自动获取IP，也就是要使用DHCP服务。宿主机为win10，需要开启服务，VMware NAT service和VMware DHCP service服务 并使其自动运行。</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>虚拟机镜像源问题<ul>
+<li>安装成功之后无法使用sudo apt-get 安装应用。<ol>
+<li>可通过修改ubuntu镜像源解决。<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// 先备份原来的镜像源文件</span><br><span class="line">sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak</span><br><span class="line">// 修改镜像源文件，清空原来的/etc/apt/sources.list文件，并把想使用的镜像源复制到文件中并保存</span><br><span class="line">sudo gedit /etc/apt/sources.list</span><br><span class="line"></span><br><span class="line"># 添加阿里源</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ focal main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ focal main restricted universe multiverse</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ focal-security main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ focal-security main restricted universe multiverse</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ focal-updates main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ focal-updates main restricted universe multiverse</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ focal-proposed main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ focal-proposed main restricted universe multiverse</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ focal-backports main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ focal-backports main restricted universe multiverse</span><br><span class="line"># 添加清华源</span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal main restricted universe multiverse</span><br><span class="line"># deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal main restricted universe multiverse</span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-updates main restricted universe multiverse</span><br><span class="line"># deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-updates main restricted universe multiverse</span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-backports main restricted universe multiverse</span><br><span class="line"># deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-backports main restricted universe multiverse</span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-security main restricted universe multiverse</span><br><span class="line"># deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-security main restricted universe multiverse multiverse</span><br><span class="line"></span><br><span class="line">// 更新源</span><br><span class="line">// sudo apt-get install</span><br><span class="line">sudo apt-get update</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ol>
+</li>
+</ul>
+</li>
+<li>装机应用<ul>
+<li>vim, net-tools(ifconfig, etc…), iptables, git, python3, java, golang, node, php, ruby, rust, docker, nginx, mysql, tomcat, vsftpd</li>
+</ul>
+</li>
+<li>虚拟机开启ssh22端口映射<ul>
+<li>先安装net-tools，然后实用ifconfig命令(或者ip addr)查看虚拟机网卡IP地址配置(选择以太网网卡IP)。选择虚拟机的外网网卡ip地址之后，在虚拟机软件(VirtualBox)的网络设置中添加对应的端口配置信息，实用NAT端口转发(高级)填写规则。再重启虚拟机<br>|		名称		|		协议		|		主机IP		|		主机端口		|		子系统IP		|		子系统端口	|<br>|		:—:		|		:—:		|			:—:		|			:—:			|			:—:			|			:—:			|<br>|		ssh		|		tcp		|		127.0.0.1	|		22022			|		10.0.2.15		|			22			|</li>
+</ul>
+</li>
+<li>开启ssh登录(局域网)<ul>
+<li>安装openssh-server<code>sudo apt-get install -y openssh-server</code></li>
+<li>查看ssh状态<code>sudo systemctl status ssh</code></li>
+<li>ufw(ubuntu防火墙)开放ssh端口<code>sudo ufw allow ssh</code></li>
+</ul>
+</li>
+<li>客户机ssh登录ubuntu<ul>
+<li>客户机使用ssh登录<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># ssh user@ipaddress -p 22[ssh-port] (默认为22端口可以不用写)</span><br><span class="line"># 根据提示输入用户密码登录</span><br><span class="line">ssh root@192.168.43.178 </span><br><span class="line"># 使用 -o 参数可以保持持久连接 serverAliveInterval=30[每30s发一个心跳包]</span><br><span class="line">ssh root@192.168.43.178 -o serverAliveInterval=30 </span><br></pre></td></tr></table></figure></li>
+<li>免输入密码登录<ol>
+<li>先在服务机开启ssh服务，并打开对应端口号，并放行</li>
+<li>在服务机当前用户目录创建.ssh 目录用来存放客户机的公钥文件id_rsa.pub的authorized_keys文件<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo mkdir ~/.ssh</span><br><span class="line">sudo touch ~/.ssh/authorized_keys</span><br></pre></td></tr></table></figure></li>
+<li>在客户机当前用户目录创建.ssh 目录用来存放要生成ssh连接的公钥(id_rsa.pub)和私钥(id_rsa)文件<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mkdir ~/.ssh</span><br><span class="line">cd ~/.ssh</span><br><span class="line">ssh-keygen -t rsa -C &#x27;yourEmail@example.com&#x27;</span><br><span class="line"># 这里会提示要输入存放的密钥名字和使用ssh时需要输入的密码，名字默认就可以，可以不用密码，</span><br><span class="line"># 直接连续按3下enter按键就可以了，之后会在当前目录生成id_rsa和id_rsa.pub文件</span><br><span class="line"># 查看公钥文件，并复制下载之后粘贴到服务机上</span><br><span class="line">cat id_rsa.pub</span><br></pre></td></tr></table></figure></li>
+<li>把客户机生成的id_rsa.pub公钥文件复制到服务机的authorized_keys中，一行一个<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd ~/.ssh</span><br><span class="line"># 把复制的公钥文件保存到服务机上，保存就可以了</span><br><span class="line">sudo vim authorized_keys</span><br></pre></td></tr></table></figure>
+<ol start="5">
+<li><pre><code>再登录时不会再提示要输入密码了
+</code></pre>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>端口操作<ul>
+<li>查看端口开放<ol>
+<li>sudo netstat -atnlp</li>
+<li>sudo lsof -i:22(对应端口号)</li>
+</ol>
+</li>
+<li>开放端口（需安装应用，iptables, iptables-persistent）<ol>
+<li>sudo iptables -I INPUT -p tcp –dport 80 -j ACCEPT </li>
+<li>sudo iptables-save # 保存</li>
+<li>sudo iptables-persistent save # 持久端口开放操作，设置为自启动(netfilter-persistent)</li>
+<li>sudo iptables-persistent reload #  重启</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>mysql相关<ul>
+<li>安装mysql，虚拟机存储问题不能成功安装<ol>
+<li>给虚拟机虚拟磁盘扩容，打虚拟机软件（VirtualBox）全局设置-&gt; 虚拟机介质管理，调整对应的虚拟机虚拟磁盘修改大小。</li>
+<li>登录虚拟机，打开虚拟机存储管理器(disk)，先修改对应扩展分区大小在修改文件系统分区大小。</li>
+</ol>
+</li>
+<li>宿主机连接虚拟机mysql<ol>
+<li>root用户登录之后，创建一个新用户授予同root用户权限用在宿主机数据库客户端软件(dbeaver, navicat)，通过ssh方式登录。参考mysql.md</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+]]></content>
+  </entry>
 </search>
