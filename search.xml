@@ -244,12 +244,32 @@
 </ul>
 </li>
 <li>虚拟机开启ssh22端口映射<ul>
-<li>先安装net-tools，然后实用ifconfig命令(或者ip addr)查看虚拟机网卡IP地址配置(选择以太网网卡IP)。选择虚拟机的外网网卡ip地址之后，在虚拟机软件(VirtualBox)的网络设置中添加对应的端口配置信息，实用NAT端口转发(高级)填写规则。再重启虚拟机<br>|		名称		|		协议		|		主机IP		|		主机端口		|		子系统IP		|		子系统端口	|<br>|		:—:		|		:—:		|			:—:		|			:—:			|			:—:			|			:—:			|<br>|		ssh		|		tcp		|		127.0.0.1	|		22022			|		10.0.2.15		|			22			|</li>
+<li>先安装net-tools，然后实用ifconfig命令(或者ip addr)查看虚拟机网卡IP地址配置(选择以太网网卡IP)。选择虚拟机的外网网卡ip地址之后，在虚拟机软件(VirtualBox)的网络设置中添加对应的端口配置信息，实用NAT端口转发(高级)填写规则。再重启虚拟机<table>
+<thead>
+<tr>
+<th align="center">名称</th>
+<th align="center">协议</th>
+<th align="center">主机IP</th>
+<th align="center">主机端口</th>
+<th align="center">子系统IP</th>
+<th align="center">子系统端口</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">ssh</td>
+<td align="center">tcp</td>
+<td align="center">127.0.0.1</td>
+<td align="center">22022</td>
+<td align="center">10.0.2.15</td>
+<td align="center">22</td>
+</tr>
+</tbody></table>
+</li>
 </ul>
 </li>
 <li>开启ssh登录(局域网)<ul>
-<li>安装openssh-server<code>sudo apt-get install -y openssh-server</code></li>
-<li>查看ssh状态<code>sudo systemctl status ssh</code></li>
+<li>安装openssh-server <code>sudo apt-get install -y openssh-server</code></li>
+<li>查看ssh状态 <code>sudo systemctl status ssh</code></li>
 <li>ufw(ubuntu防火墙)开放ssh端口<code>sudo ufw allow ssh</code></li>
 </ul>
 </li>
@@ -259,13 +279,8 @@
 <li>先在服务机开启ssh服务，并打开对应端口号，并放行</li>
 <li>在服务机当前用户目录创建.ssh 目录用来存放客户机的公钥文件id_rsa.pub的authorized_keys文件<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo mkdir ~/.ssh</span><br><span class="line">sudo touch ~/.ssh/authorized_keys</span><br></pre></td></tr></table></figure></li>
 <li>在客户机当前用户目录创建.ssh 目录用来存放要生成ssh连接的公钥(id_rsa.pub)和私钥(id_rsa)文件<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mkdir ~/.ssh</span><br><span class="line">cd ~/.ssh</span><br><span class="line">ssh-keygen -t rsa -C &#x27;yourEmail@example.com&#x27;</span><br><span class="line"># 这里会提示要输入存放的密钥名字和使用ssh时需要输入的密码，名字默认就可以，可以不用密码，</span><br><span class="line"># 直接连续按3下enter按键就可以了，之后会在当前目录生成id_rsa和id_rsa.pub文件</span><br><span class="line"># 查看公钥文件，并复制下载之后粘贴到服务机上</span><br><span class="line">cat id_rsa.pub</span><br></pre></td></tr></table></figure></li>
-<li>把客户机生成的id_rsa.pub公钥文件复制到服务机的authorized_keys中，一行一个<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd ~/.ssh</span><br><span class="line"># 把复制的公钥文件保存到服务机上，保存就可以了</span><br><span class="line">sudo vim authorized_keys</span><br></pre></td></tr></table></figure>
-<ol start="5">
-<li><pre><code>再登录时不会再提示要输入密码了
-</code></pre>
-</li>
-</ol>
-</li>
+<li>把客户机生成的id_rsa.pub公钥文件复制到服务机的authorized_keys中，一行一个<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd ~/.ssh</span><br><span class="line"># 把复制的公钥文件保存到服务机上，保存就可以了</span><br><span class="line">sudo vim authorized_keys</span><br></pre></td></tr></table></figure></li>
+<li>再登录时不会再提示要输入密码了</li>
 </ol>
 </li>
 </ul>
