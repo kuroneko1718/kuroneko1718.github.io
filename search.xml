@@ -202,6 +202,12 @@
       </tags>
   </entry>
   <entry>
+    <title>test.md</title>
+    <url>/2022/07/21/test/</url>
+    <content><![CDATA[<h2 id="这是测试的页面"><a href="#这是测试的页面" class="headerlink" title="这是测试的页面"></a>这是测试的页面</h2><p>Hello world.</p>
+]]></content>
+  </entry>
+  <entry>
     <title>ubuntu</title>
     <url>/2022/08/04/ubuntu/</url>
     <content><![CDATA[<h2 id="Ubuntu"><a href="#Ubuntu" class="headerlink" title="Ubuntu"></a>Ubuntu</h2><hr>
@@ -307,12 +313,6 @@
 </ul>
 </li>
 </ul>
-]]></content>
-  </entry>
-  <entry>
-    <title>test.md</title>
-    <url>/2022/07/21/test/</url>
-    <content><![CDATA[<h2 id="这是测试的页面"><a href="#这是测试的页面" class="headerlink" title="这是测试的页面"></a>这是测试的页面</h2><p>Hello world.</p>
 ]]></content>
   </entry>
 </search>
